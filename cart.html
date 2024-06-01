@@ -126,16 +126,9 @@
 				</button>
 			</form>
 		</div>
-			<script >
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwCHAKHYZ8xflW88QV1ku2GwiwkwCKB5Ibi9CUehujE_BxYlKw3A1EmM12B5r6oxZ1N'
-			const form = document.forms['gg']
-			form.addEventListener('submit', e=>{
-				e.preventDefault()
-				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => console.log('Thank you...!', response))
-				.catch(error => console.error('Error!',error.message))
-			})
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbwxrr9gY3hHl86SuG0uv8nQa0NJHnmqFYqzCzrqM0w4wWDuE-B--j9r9iwch5FHZK6o/exec'
+			<script>
+
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbwCHAKHYZ8xflW88QV1ku2GwiwkwCKB5Ibi9CUehujE_BxYlKw3A1EmM12B5r6oxZ1N/exec'
 
 const form = document.forms['gg']
 
