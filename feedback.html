@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> 
 <html lang="en"> 
 
@@ -65,7 +66,21 @@
 				Submit 
 			</button> 
 		</form> 
-	</div> 
+	</div>
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwdEAtltgTqFyjsmFjqn4un5C9JRy1sI394fNkAXrBWpghf6vegO8tNlugFvIZ6RBOL/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+
+	</script>
 </body> 
 
 </html>
