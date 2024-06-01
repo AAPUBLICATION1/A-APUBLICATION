@@ -68,7 +68,7 @@
 	<body>
 		<div class="main">
 			<h2>ORDER NOW...</h2>
-			<form action="https://script.google.com/macros/s/AKfycbwCHAKHYZ8xflW88QV1ku2GwiwkwCKB5Ibi9CUehujE_BxYlKw3A1EmM12B5r6oxZ1N/exec" method="POST">
+			<form action="" method="POST" name="contactform" id="contactform">
 				<label for="first"
 					>First Name:</label
 				>
@@ -126,6 +126,17 @@
 				</button>
 			</form>
 		</div>
-		<script src="gg.js"></script>
+		<script>
+			<script >
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwCHAKHYZ8xflW88QV1ku2GwiwkwCKB5Ibi9CUehujE_BxYlKw3A1EmM12B5r6oxZ1N/exec'
+			const form = document.forms['contactform']
+			form.addEventListener('submit', e=>{
+				e.preventDefault()
+				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => console.log('Thank you...!', response))
+				.catch(error => console.error('Error!',error.message))
+			})
+		</script>
+		</script>
 	</body>
 </html>
