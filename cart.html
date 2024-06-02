@@ -76,7 +76,7 @@ button:hover {
 	<body>
 		<div class="main">
 			<h2>ORDER NOW...</h2>
-			<form action="" method="post" name="gg" id="gg">
+			<form action="" method="post" name="contact-form" id="contact-form">
 				<label for="first"
 					>First Name:</label
 				>
@@ -135,13 +135,16 @@ button:hover {
 			<script>
 
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbzAbfTyzKkDNzTkPHLzerdYgw5-XYfWsQt63xNZz6byXsyexwxdhyaOqF3xunIGnhBQ/exec'
-			const form = document.forms['gg']
-			form.addEventListener('submit', e=>{
-				e.preventDefault()
-				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => console.log('Thank you...!', response))
-				.catch(error => console.error('Error!',error.message))
-			})
+			const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+
 
 		</script>
 	</body>
